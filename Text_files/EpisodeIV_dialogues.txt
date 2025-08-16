@@ -1,5 +1,3 @@
-STAR WARS - EPISODE 4: STAR WARS
-
 THREEPIO	Did you hear that?  They've shut down the main reactor.  We'll be destroyed for sure.  This is madness!
 THREEPIO	We're doomed!
 THREEPIO	There'll be no escape for the Princess this time.
@@ -146,7 +144,7 @@ THREEPIO	That's how we came to be in your service, if you take my meaning, sir.
 LUKE	Have you been in many battles?
 THREEPIO	Several, I think.  Actually, there's not much to tell.  I'm not much more than an interpreter, and not very good at telling stories.  Well, not at making them interesting, anyways.
 LUKE	Well, my little friend, you've got something jammed in here real good.  Were you on a starcruiser or...
-LEIA	Help me, Obi-Wan Kenobi.  You'remy only hope.
+LEIA	Help me, Obi-Wan Kenobi.  You're my only hope.
 LUKE	What's this?
 THREEPIO	What is what?!?  He asked you a question...What is that?
 LEIA	Help me, Obi-Wan Kenobi.  You're my only hope.  Help me, Obi-Wan Kenobi.  You're my only hope.

@@ -1,0 +1,198 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: left;
+  width: 95vw;
+}
+
+.App-header {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.input-form, .output-display, .context-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #2d2d2d;
+  width: auto;
+  max-width: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+label {
+  font-weight: 500;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #3a3a3a;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+textarea {
+  height: 180px;
+  resize: vertical;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.output-display h2, .context-display h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #e0e0e0;
+}
+
+.transformed-text-container {
+  position: relative;
+}
+
+.copy-button:hover {
+  background-color: #666;
+}
+
+.thinking-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+  animation: blink 1.2s infinite ease-in-out;
+  margin-left: 8px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.transformed-text {
+  background-color: #444;
+  padding: 1rem;
+  border-radius: 4px;
+  min-height: 150px;
+  white-space: pre-wrap;
+  position: relative;
+}
+
+.context-list {
+  display: grid; /* Changed to grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid columns */
+  gap: 1rem; /* Gap between grid items */
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #3a3a3a;
+}
+
+.context-item {
+  padding: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #444;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.context-item p {
+  margin: 0; 
+  line-height: 1.4;
+}
+
+.context-item strong {
+  color: #007bff; 
+}
+
+.context-display {
+  grid-column: 1 / -1; 
+}
+ 
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .input-form, .output-display, .context-display {
+    width: auto;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .App-header h1 {
+    font-size: 2em;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-form, .output-display, .context-display {
+    padding: 0.8rem;
+  }
+}
+
+
+
+ 

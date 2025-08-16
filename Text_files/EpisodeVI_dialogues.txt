@@ -1,5 +1,3 @@
-STAR WARS - EPISODE 6: RETURN OF THE JEDI
-
 SHUTTLE CAPTAIN	 Command station, this is ST 321. Code Clearance Blue. We're starting our approach. Deactivate the security shield.
 DEATH STAR CONTROLLER	
 (filtered VO)	 The security deflector shield will be deactivated when we have confirmation of your code transmission. Stand by... You are clear to proceed.

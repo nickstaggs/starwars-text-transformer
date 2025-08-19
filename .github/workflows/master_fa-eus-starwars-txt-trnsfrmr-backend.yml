@@ -67,3 +67,4 @@ jobs:
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_46D6F78C79D840BBBFDFC52C57A8FDF3 }}
+          sku: flexconsumption

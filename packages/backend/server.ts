@@ -16,6 +16,11 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', uptime: process.uptime() });
+});
+
 app.use('/transform-text', createTransformTextStreamRouter());
 
 app.listen(3000, () => {

@@ -3,6 +3,8 @@ import express from 'express';
 import { createTransformTextStreamRouter } from './routes/transform-text-stream.js';
 import rateLimit from 'express-rate-limit';
 
+const port = process.env.PORT || '8080'
+
 const app = express();
 app.use(express.json());
 
@@ -17,13 +19,12 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (_, res) => {
   res.status(200).json({ status: 'ok', uptime: process.uptime() });
 });
 
 app.use('/transform-text', createTransformTextStreamRouter());
 
 app.listen(3000, () => {
-    console.log('API running: http://localhost:3000');
-    console.log('Stream test:  curl -N "http://localhost:3000/transform-text/stream?style=children%27s%20book%20author&text=The%20cat%20went%20surfing."');
+    console.log(`API running: http://localhost:${port}`);
 });

@@ -26,5 +26,5 @@ app.get('/health', (_, res) => {
 app.use('/transform-text', createTransformTextStreamRouter());
 
 app.listen(port, () => {
-    console.log(`API running: http://localhost:${port}\n`);
+    console.log(`API running: http://localhost:${port}`);
 });

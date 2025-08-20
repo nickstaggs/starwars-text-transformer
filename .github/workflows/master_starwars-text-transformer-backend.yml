@@ -25,7 +25,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
+          cd packages/backend/
+          npm install --workspaces=false --install-links
           npm run build --if-present
           npm run test --if-present
 
@@ -33,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ./packages/backend
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,4 +63,5 @@ jobs:
           app-name: 'starwars-text-transformer-backend'
           slot-name: 'Production'
           package: .
+          startup-command: 'npm run start'
           

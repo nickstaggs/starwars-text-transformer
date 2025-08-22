@@ -40,7 +40,7 @@ To get this application up and running, follow these steps:
     ```bash
     npm run start -w text-transformer
     ```
-    The API will be running at `http://localhost:3000`.
+    The API will be running at `http://localhost:8081`.
 
 2.  **Start the Frontend Development Server**:
     In a new terminal, from the project root, start the frontend:
@@ -53,14 +53,14 @@ To get this application up and running, follow these steps:
 
 The backend API is built with Node.js and Express, providing the following routes for text transformation:
 
-*   **`/transform-text/stream` (POST)**:
+*   **`/api/transform-text/stream` (POST)**:
     *   **Description**: Transforms user-provided text into the style of a selected Star Wars character.
     *   **Request Body**:
         *   `style` (string): The name of the Star Wars character (e.g., "Luke Skywalker", "Darth Vader").
         *   `text` (string): The text to be transformed.
     *   **Response**: Streams the transformed text.
 
-*   **`/transform-text/streamWithContext` (POST)**:
+*   **`/api/transform-text/streamWithContext` (POST)**:
     *   **Description**: Transforms user-provided text into the style of a selected Star Wars character, enhanced by providing relevant contextual quotes from the movies. This helps the model generate more accurate and nuanced stylistic transformations.
     *   **Request Body**:
         *   `style` (string): The name of the Star Wars character.

@@ -23,7 +23,7 @@ app.get('/health', (_, res) => {
   res.status(200).json({ status: 'ok', uptime: process.uptime() });
 });
 
-app.use('/transform-text', createTransformTextStreamRouter());
+app.use('/api/transform-text', createTransformTextStreamRouter());
 
 app.listen(port, () => {
     console.log(`API running: http://localhost:${port}`);

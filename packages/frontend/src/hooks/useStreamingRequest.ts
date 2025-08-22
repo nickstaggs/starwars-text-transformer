@@ -27,7 +27,7 @@ const useStreamingRequest = () => {
         const decoder = new TextDecoder();
 
         try {
-            for await (const chunk of resp.body) {
+            for await (const chunk of resp.body! as unknown as AsyncIterable<Uint8Array<ArrayBuffer>>) {
                 const data = decoder.decode(chunk);
                 for (const line of data.split('\n')) {
                     if (line.trim() !== '') {
@@ -50,7 +50,6 @@ const useStreamingRequest = () => {
             setTransformedText('Oops, something went wrong!');
         } finally {
             setIsStreaming(false);
-            console.log(contextObjects)
         }
     };
 

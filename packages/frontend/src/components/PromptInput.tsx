@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface PromptInputProps {
   text: string;
   onTextChange: (text: string) => void;

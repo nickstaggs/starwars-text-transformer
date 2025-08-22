@@ -27,20 +27,34 @@ const useStreamingRequest = () => {
         const decoder = new TextDecoder();
 
         try {
-            for await (const chunk of resp.body! as unknown as AsyncIterable<Uint8Array<ArrayBuffer>>) {
-                const data = decoder.decode(chunk);
-                for (const line of data.split('\n')) {
-                    if (line.trim() !== '') {
-                        const { delta, context } = JSON.parse(line);
-                        if (delta) {
-                            const deltaArray = delta.split('');
-                            for await(const char of deltaArray) {
-                                await new Promise(resolve => setTimeout(resolve, 35));
-                                setTransformedText((prev) => prev + char);
+            if (resp.body) {
+                const reader = resp.body.getReader();
+                let partialLine = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        break;
+                    }
+
+                    const data = partialLine + decoder.decode(value, { stream: true });
+                    const lines = data.split('\n');
+                    
+                    partialLine = lines.pop() || '';
+
+                    for (const line of lines) {
+                        if (line.trim() !== '') {
+                            const { delta, context } = JSON.parse(line);
+                            if (delta) {
+                                const deltaArray = delta.split('');
+                                for await(const char of deltaArray) {
+                                    await new Promise(resolve => setTimeout(resolve, 35));
+                                    setTransformedText((prev) => prev + char);
+                                }
                             }
-                        }
-                        if (context) {
-                            setContextObjects(c => [...c, context])
+                            if (context) {
+                                setContextObjects(c => [...c, context])
+                            }
                         }
                     }
                 }

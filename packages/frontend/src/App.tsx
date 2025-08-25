@@ -4,6 +4,7 @@ import InputForm from './components/InputForm';
 import OutputDisplay from './components/OutputDisplay';
 import ContextDisplay from './components/ContextDisplay';
 import useStreamingRequest from "./hooks/useStreamingRequest.ts";
+import githubLogo from './assets/github-mark-white.svg';
 
 function App() {
   const [style, setStyle] = useState('');
@@ -35,6 +36,11 @@ function App() {
           context={contextObjects}
         />
       </main>
+      <footer className="App-footer">
+        <a href="https://github.com/nickstaggs/starwars-text-transformer" target="_blank" rel="noopener noreferrer">
+          <img src={githubLogo} alt="GitHub" style={{ width: '32px', height: '32px' }} />
+        </a>
+      </footer>
     </div>
   );
 }
